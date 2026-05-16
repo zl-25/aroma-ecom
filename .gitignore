@@ -1,0 +1,17 @@
+# Dépendances Node.js
+node_modules/
+
+# Base de données locale (sera recréée automatiquement sur Render)
+database.sqlite
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variables d'environnement
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db

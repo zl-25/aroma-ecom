@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Order | Aroma & Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col md:flex-row bg-white">
+        
+        <!-- Left Section: Lifestyle Image & Info -->
+        <div class="flex flex-col lg:flex-row w-full md:w-[55%] lg:w-[60%] xl:w-[65%] relative items-center justify-center p-6 md:p-12 overflow-y-auto bg-white">
+            
+            <!-- Breadcrumbs & Logo & Login (Absolute on Large, Static on Mobile) -->
+            <div class="w-full flex justify-between items-center mb-6 lg:absolute lg:top-8 lg:left-8 lg:right-8 lg:w-[calc(100%-4rem)] z-20">
+                <nav class="text-[10px] uppercase tracking-widest font-semibold flex items-center gap-2 text-gray-500">
+                    <a href="#" class="hover:text-black transition-colors">Aroma & Design</a>
+                    <span>&rsaquo;</span>
+                    <a href="#" class="hover:text-black transition-colors">Bien-être</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="Aroma & Design" class="w-24 md:w-32 object-contain">
+                    <button id="btn-admin-login" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 text-gray-600 hover:text-[#d08b6b] hover:bg-[#fffaf8] border border-gray-200 transition-colors shadow-sm" title="Espace Administrateur">
+                        <iconify-icon icon="lucide:user" class="text-sm"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-12 mt-4 lg:mt-16 max-w-6xl">
+                <!-- Text Details -->
+                <div class="w-full xl:w-1/2 space-y-4 xl:space-y-6 order-2 xl:order-1 text-center xl:text-left z-10">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#231f20] font-title tracking-tight leading-tight">Aromatiseur Intelligent</h1>
+                    
+                    <div class="flex items-center justify-center xl:justify-start gap-2">
+                        <div class="flex gap-1 text-[#d08b6b]">
+                            <iconify-icon icon="lucide:star" class="text-lg fill-current"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-lg fill-current"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-lg fill-current"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-lg fill-current"></iconify-icon>
+                            <iconify-icon icon="lucide:star-half" class="text-lg fill-current"></iconify-icon>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600 underline cursor-pointer">4.9/5 (128 avis)</span>
+                    </div>
+
+                    <div class="flex items-center justify-center xl:justify-start gap-2 text-red-600 bg-red-50 py-1.5 px-3 rounded-full w-max mx-auto xl:mx-0 border border-red-100 shadow-sm mt-2">
+                        <iconify-icon icon="lucide:eye" class="text-base animate-pulse"></iconify-icon>
+                        <span class="text-xs font-bold"><span id="fake-visitors">42</span> personnes regardent ce produit</span>
+                    </div>
+
+                    <p class="text-sm md:text-base text-gray-600 leading-relaxed mx-auto xl:mx-0 max-w-md mt-4">
+                        Transformez votre espace en un havre de paix. Ce diffuseur ultrasonique combine aromathérapie et un effet de flamme 3D ultra-réaliste pour apaiser le corps et l'esprit.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-2 pt-6 border-t border-gray-300/50 max-w-md mx-auto xl:mx-0 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <iconify-icon icon="lucide:truck" class="text-[#d08b6b] text-xl"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-[#231f20]">Livraison Rapide</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <iconify-icon icon="lucide:shield-check" class="text-[#d08b6b] text-xl"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-[#231f20]">Garantie 1 An</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <iconify-icon icon="lucide:droplets" class="text-[#d08b6b] text-xl"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-[#231f20]">Aromathérapie</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <iconify-icon icon="lucide:moon" class="text-[#d08b6b] text-xl"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-[#231f20]">Ultra-Silencieux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Image -->
+                <div class="w-full xl:w-1/2 flex flex-col items-center order-1 xl:order-2 z-10">
+                    <div class="relative w-full max-w-[250px] md:max-w-xs xl:max-w-sm perspective-1000">
+                        <img id="main-product-image" src="product-main.png" alt="Aromatiseur Intelligent" class="w-full transition-all duration-500 float-3d">
+                    </div>
+                    <!-- Bottle Thumbnails -->
+                    <div class="flex gap-4 mt-6 md:mt-10">
+                        <div class="thumbnail-btn w-12 md:w-14 h-12 md:h-14 rounded-full border-2 border-[#d08b6b] bg-white p-1 cursor-pointer transition-transform hover:scale-110 shadow-sm">
+                            <img src="product-main.png" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="thumbnail-btn w-12 md:w-14 h-12 md:h-14 rounded-full border-2 border-transparent hover:border-[#d08b6b] bg-white p-1 cursor-pointer transition-transform hover:scale-110 shadow-sm">
+                            <img src="variant1.png" class="w-full h-full object-cover rounded-full grayscale opacity-60 transition-all">
+                        </div>
+                        <div class="thumbnail-btn w-12 md:w-14 h-12 md:h-14 rounded-full border-2 border-transparent hover:border-[#d08b6b] bg-white p-1 cursor-pointer transition-transform hover:scale-110 shadow-sm">
+                            <img src="variant2.png" class="w-full h-full object-cover rounded-full grayscale opacity-60 transition-all">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Checkout Panel -->
+        <div class="w-full md:w-[45%] lg:w-[40%] xl:w-[35%] bg-white min-h-screen flex flex-col relative border-l border-gray-200">
+            <!-- Header -->
+            <div class="pt-12 px-8 pb-4">
+                <button id="close-checkout" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 transition-colors mb-4">
+                    <iconify-icon icon="lucide:x" class="text-xl"></iconify-icon>
+                </button>
+                <h2 class="text-2xl font-title font-medium text-center mb-8">Valider ma commande</h2>
+
+                <!-- Main Content / Accordion Stepper -->
+                <div class="flex-1 overflow-y-auto hims-scrollbar px-8 pb-12 space-y-6">
+                    
+                    <!-- STEP 1: Bundle -->
+                    <div class="step-card bg-white border border-[#d08b6b] rounded-xl shadow-sm overflow-hidden transition-all duration-300" id="step-1-card">
+                        <div class="bg-[#fffaf8] p-4 flex justify-between items-center border-b border-[#d08b6b]/30 transition-colors" id="step-1-header">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-[#d08b6b] text-white flex items-center justify-center text-xs font-bold" id="step-1-num">1</span>
+                                <h3 class="font-bold text-[#231f20]" id="step-1-title">Choisir une offre</h3>
+                            </div>
+                            <iconify-icon icon="lucide:check-circle-2" class="text-[#d08b6b] text-xl hidden" id="step-1-check"></iconify-icon>
+                        </div>
+                        <div class="p-6 space-y-3" id="step-1-body">
+                            <!-- Bundle Selection -->
+                            <label class="relative flex items-center justify-between p-4 border border-[#d08b6b] bg-[#fffaf8] rounded-lg cursor-pointer transition-colors bundle-option">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="bundle" value="1" data-price="25000" data-desc="1 Diffuseur" checked class="w-4 h-4 accent-[#d08b6b] text-[#d08b6b] border-gray-300 focus:ring-[#d08b6b]">
+                                    <span class="font-medium text-sm">1 Diffuseur</span>
+                                </div>
+                                <span class="font-semibold text-sm">25 000 FCFA</span>
+                            </label>
+        
+                            <label class="relative flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-[#d08b6b] transition-colors bundle-option">
+                                <div class="absolute -top-2 right-4 bg-[#d08b6b] text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full">Populaire</div>
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="bundle" value="2" data-price="40000" data-desc="2 Diffuseurs" class="w-4 h-4 accent-[#d08b6b] text-[#d08b6b] border-gray-300 focus:ring-[#d08b6b]">
+                                    <span class="font-medium text-sm">2 Diffuseurs <span class="text-xs text-green-600 font-normal ml-1">(-20%)</span></span>
+                                </div>
+                                <span class="font-semibold text-sm">40 000 FCFA</span>
+                            </label>
+        
+                            <label class="relative flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-[#d08b6b] transition-colors bundle-option">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="bundle" value="3" data-price="55000" data-desc="3 Diffuseurs" class="w-4 h-4 accent-[#d08b6b] text-[#d08b6b] border-gray-300 focus:ring-[#d08b6b]">
+                                    <span class="font-medium text-sm">3 Diffuseurs <span class="text-xs text-green-600 font-normal ml-1">(-30%)</span></span>
+                                </div>
+                                <span class="font-semibold text-sm">55 000 FCFA</span>
+                            </label>
+
+                            <button type="button" id="btn-next-to-2" class="w-full mt-6 bg-[#231f20] hover:bg-black text-white py-3.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                Passer à la livraison <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Delivery -->
+                    <div class="step-card bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 opacity-50" id="step-2-card">
+                        <div class="p-4 flex justify-between items-center bg-gray-50 border-b border-transparent transition-colors" id="step-2-header">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center text-xs font-bold transition-colors" id="step-2-num">2</span>
+                                <h3 class="font-bold text-gray-500 transition-colors" id="step-2-title">Détails de Livraison</h3>
+                            </div>
+                            <iconify-icon icon="lucide:check-circle-2" class="text-[#d08b6b] text-xl hidden" id="step-2-check"></iconify-icon>
+                        </div>
+                        <div class="p-6 hidden" id="step-2-body">
+                            <!-- COD Form -->
+                            <form class="space-y-4" id="delivery-form">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">Prénom</label>
+                                        <input type="text" id="first-name" class="w-full border border-gray-200 rounded-md p-2.5 text-sm focus:outline-none focus:border-[#d08b6b]" placeholder="Jean" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">Nom</label>
+                                        <input type="text" id="last-name" class="w-full border border-gray-200 rounded-md p-2.5 text-sm focus:outline-none focus:border-[#d08b6b]" placeholder="Dupont" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">Téléphone</label>
+                                    <input type="tel" id="phone" class="w-full border border-gray-200 rounded-md p-2.5 text-sm focus:outline-none focus:border-[#d08b6b]" placeholder="06 12 34 56 78" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">Adresse</label>
+                                    <input type="text" id="address" class="w-full border border-gray-200 rounded-md p-2.5 text-sm focus:outline-none focus:border-[#d08b6b]" placeholder="123 rue de la Paix" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">Ville</label>
+                                    <input type="text" id="city" class="w-full border border-gray-200 rounded-md p-2.5 text-sm focus:outline-none focus:border-[#d08b6b]" placeholder="Paris" required>
+                                </div>
+                                
+                                <div class="flex gap-3 mt-6">
+                                    <button type="button" id="btn-back-to-1" class="w-1/3 border border-gray-200 text-gray-600 py-3.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors">Retour</button>
+                                    <button type="button" id="btn-next-to-3" class="w-2/3 bg-[#231f20] hover:bg-black text-white py-3.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                        Récapitulatif <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Summary -->
+                    <div class="step-card bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 opacity-50" id="step-3-card">
+                        <div class="p-4 flex justify-between items-center bg-gray-50 border-b border-transparent transition-colors" id="step-3-header">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center text-xs font-bold transition-colors" id="step-3-num">3</span>
+                                <h3 class="font-bold text-gray-500 transition-colors" id="step-3-title">Résumé de la commande</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 hidden space-y-4" id="step-3-body">
+                            
+                            <!-- Product Card Recap -->
+                            <div class="flex gap-4 items-center bg-white p-3 rounded-lg border border-gray-200">
+                                <div class="w-16 h-16 bg-white rounded flex items-center justify-center overflow-hidden">
+                                    <img id="cart-product-image" src="product-main.png" alt="Aromatiseur Intelligent" class="w-full h-full object-contain">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-sm font-semibold">Aromatiseur Intelligent</h4>
+                                    <p class="text-xs text-gray-500 mt-1" id="summary-bundle-desc">1 Diffuseur</p>
+                                </div>
+                                <div class="font-bold text-sm" id="unit-price">25 000 FCFA</div>
+                            </div>
+
+                            <!-- Pricing Breakdown -->
+                            <div class="space-y-3 pt-2">
+                                <div class="flex justify-between text-sm text-gray-500">
+                                    <span>Sous-total</span>
+                                    <span id="sub-total">25 000 FCFA</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-500">
+                                    <span>Livraison Rapide</span>
+                                    <span id="shipping-fee">2 000 FCFA</span>
+                                </div>
+                                <div class="pt-3 border-t border-gray-200 flex justify-between font-bold text-lg text-[#231f20]">
+                                    <span>Total (Paiement à la livraison)</span>
+                                    <span id="total-price">27 000 FCFA</span>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 mt-6">
+                                <button type="button" id="btn-back-to-2" class="w-1/3 border border-gray-200 text-gray-600 py-3.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors">Retour</button>
+                                <button id="confirm-order-btn" class="w-2/3 bg-[#d08b6b] hover:bg-[#c07a5d] text-white py-3.5 rounded-lg text-xs md:text-sm uppercase font-bold tracking-widest transition-all shadow-lg shadow-[#d08b6b]/30">
+                                    Confirmer la Commande
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST (Custom Alert) -->
+    <div id="custom-notification" class="fixed top-4 left-1/2 transform -translate-x-1/2 -translate-y-24 opacity-0 transition-all duration-300 z-[100] flex items-center gap-3 px-4 py-3 rounded-lg shadow-xl font-medium text-sm pointer-events-none min-w-[300px] justify-center">
+        <iconify-icon id="notification-icon" icon="lucide:info" class="text-xl"></iconify-icon>
+        <span id="notification-message">Notification message</span>
+    </div>
+
+    <!-- FAKE PURCHASE TOAST -->
+    <div id="purchase-toast" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-80 bg-white shadow-2xl rounded-xl border border-gray-100 p-3 flex items-center gap-3 transform transition-all duration-500 translate-y-32 opacity-0 z-50 pointer-events-none">
+        <div class="w-12 h-12 flex-shrink-0 bg-green-50 rounded-lg flex items-center justify-center">
+            <iconify-icon icon="lucide:shopping-bag" class="text-green-600 text-xl"></iconify-icon>
+        </div>
+        <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate">
+                <span id="buyer-name" class="font-bold">Jean M.</span> a acheté
+            </p>
+            <p class="text-xs text-gray-500 truncate" id="buyer-item">Bundle Complet</p>
+            <p class="text-xs text-green-600 mt-0.5 font-medium" id="buyer-time">Il y a 2 minutes</p>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="admin-login-modal" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-[150] p-4 transition-opacity opacity-0">
+        <div class="bg-white rounded-2xl w-full max-w-sm p-8 shadow-2xl transform scale-95 transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-title font-bold text-[#231f20]">Accès Admin</h3>
+                <button id="close-login-modal" class="text-gray-400 hover:text-gray-800 transition-colors">
+                    <iconify-icon icon="lucide:x" class="text-2xl"></iconify-icon>
+                </button>
+            </div>
+            <form id="admin-login-form" class="space-y-5">
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Identifiant</label>
+                    <div class="relative">
+                        <iconify-icon icon="lucide:mail" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
+                        <input type="text" id="admin-username" class="w-full border border-gray-300 rounded-lg py-2.5 pl-10 pr-3 text-sm focus:border-[#d08b6b] focus:ring-1 focus:ring-[#d08b6b] focus:outline-none transition-colors" placeholder="admin" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Mot de passe</label>
+                    <div class="relative">
+                        <iconify-icon icon="lucide:lock" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
+                        <input type="password" id="admin-password" class="w-full border border-gray-300 rounded-lg py-2.5 pl-10 pr-3 text-sm focus:border-[#d08b6b] focus:ring-1 focus:ring-[#d08b6b] focus:outline-none transition-colors" placeholder="••••••••" required>
+                    </div>
+                </div>
+                <div id="login-error" class="text-red-500 text-xs font-semibold hidden text-center">Identifiants incorrects</div>
+                <button type="submit" class="w-full bg-[#231f20] hover:bg-black text-white py-3 rounded-lg text-sm font-bold uppercase tracking-widest transition-colors shadow-lg mt-2 flex items-center justify-center gap-2">
+                    Se Connecter <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

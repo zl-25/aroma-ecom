@@ -1,0 +1,51 @@
+@import url('https://api.fontshare.com/v2/css?f[]=sora@300,400,500,600&display=swap');
+
+:root {
+    --hims-peach: #d08b6b;
+    --hims-bg: #f8f6f3;
+    --hims-border: #e8e4df;
+    --hims-text: #231f20;
+    --hims-product-bg: #ebc9b9;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #000;
+    color: var(--hims-text);
+}
+
+.font-title {
+    font-family: 'Sora', sans-serif;
+}
+
+.hims-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+.hims-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.hims-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--hims-border);
+    border-radius: 10px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+    50% { transform: translateY(-15px) rotateX(4deg) rotateY(4deg); }
+    100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+}
+
+.float-3d {
+    animation: float 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0) scale(1); }
+    25% { transform: translateX(-5px) scale(1); }
+    75% { transform: translateX(5px) scale(1); }
+}
+
+.animate-shake {
+    animation: shake 0.3s ease-in-out;
+}
