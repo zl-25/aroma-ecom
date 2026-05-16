@@ -1,7 +1,5 @@
-// ⚠️ IMPORTANT DÉPLOIEMENT :
-// Remplacez 'VOTRE_URL_RENDER' par l'URL de votre backend sur Render
-// Exemple : 'https://aroma-backend.onrender.com'
-const PRODUCTION_BACKEND_URL = 'VOTRE_URL_RENDER';
+// Backend URL (Render)
+const PRODUCTION_BACKEND_URL = 'https://aroma-ecom.onrender.com';
 
 let API_BASE = '';
 if (window.location.protocol === 'file:') {
