@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- State ---
     let quantity = 1;
     let unitPrice = 25000;
-    const shippingFee = 2000;
+    let shippingFee = 2000;
     const taxRate = 0; // Pas de taxe supplémentaire pour le moment
 
     // --- DOM Elements ---
@@ -86,6 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners ---
     
+    // City selection logic (Shipping Fee calculation)
+    const citySelect = document.getElementById('city');
+    if (citySelect) {
+        citySelect.addEventListener('change', (e) => {
+            const selectedCity = e.target.value;
+            if (selectedCity === 'Libreville') {
+                shippingFee = 2000;
+            } else if (selectedCity === 'Akanda' || selectedCity === 'Owendo') {
+                shippingFee = 3000;
+            } else {
+                shippingFee = 5000;
+            }
+            updatePricing();
+        });
+    }
+
     // Bundle selection logic
     bundleRadios.forEach(radio => {
         radio.addEventListener('change', (e) => {
