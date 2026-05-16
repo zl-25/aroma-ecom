@@ -29,7 +29,12 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
             total_price TEXT,
             status TEXT DEFAULT 'En attente',
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
+        )`, () => {
+            // Migrations: s'assurer que les colonnes ajoutées plus tard existent
+            db.run(`ALTER TABLE orders ADD COLUMN city TEXT`, (err) => {
+                // On ignore l'erreur si la colonne existe déjà
+            });
+        });
 
         db.run(`CREATE TABLE IF NOT EXISTS products (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

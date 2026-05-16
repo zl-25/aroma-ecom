@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-back-to-1')?.addEventListener('click', () => goToStep(1));
     document.getElementById('btn-next-to-3')?.addEventListener('click', () => {
         // Validate form before going to step 3
-        const inputs = document.querySelectorAll('#delivery-form input[required]');
+        const inputs = document.querySelectorAll('#delivery-form input[required], #delivery-form select[required]');
         let isValid = true;
         inputs.forEach(input => {
             if (!input.value.trim()) {
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isValid) {
             goToStep(3);
         } else {
-            alert('Veuillez remplir tous les détails de livraison.');
+            showNotification('Veuillez remplir tous les détails de livraison.', 'error');
         }
     });
     document.getElementById('btn-back-to-2')?.addEventListener('click', () => goToStep(2));
@@ -258,7 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('delivery-form').reset();
                 goToStep(1);
             } else {
-                showNotification('Erreur lors de la création de la commande. Veuillez réessayer.', 'error');
+                const errorData = await response.json().catch(() => ({}));
+                showNotification(errorData.error || 'Erreur lors de la création de la commande. Veuillez réessayer.', 'error');
             }
         } catch (error) {
             console.error('Erreur:', error);
