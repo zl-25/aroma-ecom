@@ -254,58 +254,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// === REAL LIVE VISITORS ===
-function initRealVisitors() {
+// === COMPTEUR DE VISITEURS PERSUASIF (Urgence d'achat) ===
+function initFakeVisitors() {
     const visitorEl = document.getElementById('fake-visitors');
-    
-    // 1. Generate or get Session ID
-    let sessionId = sessionStorage.getItem('aroma_session_id');
-    if (!sessionId) {
-        sessionId = 'sess_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-        sessionStorage.setItem('aroma_session_id', sessionId);
-    }
+    if (!visitorEl) return;
 
-    // 2. Heartbeat to backend
-    const sendHeartbeat = async () => {
-        try {
-            await fetch(API_BASE + '/api/visit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ sessionId })
-            });
-        } catch (e) {}
+    // Nombre de base réaliste (entre 18 et 35 au démarrage)
+    let currentCount = Math.floor(Math.random() * 18) + 18;
+
+    const updateDisplay = (newCount) => {
+        if (visitorEl.textContent !== newCount.toString()) {
+            visitorEl.style.opacity = '0.5';
+            setTimeout(() => {
+                visitorEl.textContent = newCount;
+                visitorEl.style.opacity = '1';
+            }, 300);
+        }
     };
 
-    // 3. Fetch real visitor count
-    const fetchVisitorCount = async () => {
-        if (!visitorEl) return;
-        try {
-            const res = await fetch(API_BASE + '/api/stats');
-            const data = await res.json();
-            // Minimum 1 active visitor (themselves)
-            const activeCount = data.activeVisitors > 0 ? data.activeVisitors : 1; 
-            
-            if (visitorEl.textContent !== activeCount.toString()) {
-                visitorEl.style.opacity = '0.5';
-                setTimeout(() => {
-                    visitorEl.textContent = activeCount;
-                    visitorEl.style.opacity = '1';
-                }, 300);
-            }
-        } catch (e) {}
+    // Afficher dès le début
+    updateDisplay(currentCount);
+
+    // Fluctuation réaliste : toutes les 8 à 20 secondes
+    const fluctuate = () => {
+        const change = Math.random();
+        if (change < 0.55) {
+            // 55% de chances : quelqu'un rejoint (+1 ou +2)
+            currentCount += Math.random() < 0.7 ? 1 : 2;
+        } else {
+            // 45% de chances : quelqu'un part (-1)
+            currentCount -= 1;
+        }
+        // Maintenir entre 18 et 47 pour rester crédible
+        currentCount = Math.max(18, Math.min(47, currentCount));
+        updateDisplay(currentCount);
+
+        // Prochain changement dans 8 à 22 secondes
+        const nextTick = 8000 + Math.random() * 14000;
+        setTimeout(fluctuate, nextTick);
     };
 
-    sendHeartbeat();
-    fetchVisitorCount();
-    
-    // Heartbeat & sync every 10 seconds
-    setInterval(() => {
-        sendHeartbeat();
-        fetchVisitorCount();
-    }, 10000);
+    // Premier changement après 5 à 12 secondes
+    setTimeout(fluctuate, 5000 + Math.random() * 7000);
 }
 
-document.addEventListener('DOMContentLoaded', initRealVisitors);
+document.addEventListener('DOMContentLoaded', initFakeVisitors);
 
 // === FAKE LIVE PURCHASES (GABON) ===
 const gaboneseNames = [
